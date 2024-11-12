@@ -5,6 +5,7 @@ import com.devsuperior.crud.client.entities.Client;
 import com.devsuperior.crud.client.repositories.ClientRepository;
 import com.devsuperior.crud.client.services.exceptions.DatabaseException;
 import com.devsuperior.crud.client.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -41,7 +42,7 @@ public class ClientServices {
             entity = repository.save(entity);
             return new ClientDTO(entity);
         }
-        catch (ResourceNotFoundException e) {
+        catch (EntityNotFoundException e) {// é uma exceção do JPA/Hibernate que é lançada quando uma entidade não é encontrada no banco de dados.
             throw new ResourceNotFoundException("Recurso não encontrado");
         }
     }
