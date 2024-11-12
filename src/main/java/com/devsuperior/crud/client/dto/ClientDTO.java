@@ -15,7 +15,7 @@ public class ClientDTO {
     private String name;
     private String cpf;
     private Double income;
-    @PastOrPresent(message = "Data não pode ser data futura")
+    @PastOrPresent(message = "Não pode ser data futura")
     private LocalDate birthDate;
     private Integer childrean;
 
