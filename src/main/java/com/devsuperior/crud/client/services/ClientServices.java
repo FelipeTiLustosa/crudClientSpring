@@ -33,6 +33,39 @@ public class ClientServices {
         return new ClientDTO(client);
     }
 
+    @Transactional
+    public ClientDTO update(Long id, ClientDTO dto) {
+        try {
+            Client entity = repository.getReferenceById(id);
+            copyDtoToEntity(dto,entity);
+            entity = repository.save(entity);
+            return new ClientDTO(entity);
+        }
+        catch (ResourceNotFoundException e) {
+            throw new ResourceNotFoundException("Recurso não encontrado");
+        }
+    }
+
+    @Transactional(readOnly = true)
+    public ClientDTO insert(ClientDTO dto) {
+        Client client = new Client();
+        copyDtoToEntity(dto, client);
+        client = repository.save(client);
+        return new ClientDTO(client);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public void delete(Long id) {
+        if (!repository.existsById(id)) {
+            throw new ResourceNotFoundException("Recurso não encontrado");
+        }
+        try {
+            repository.deleteById(id);
+        }
+        catch (DataIntegrityViolationException e) {
+            new DatabaseException("Falha de integridade referencial");
+        }
+    }
 
     public  void copyDtoToEntity(ClientDTO dto, Client entity){
         entity.setName(dto.getName());
