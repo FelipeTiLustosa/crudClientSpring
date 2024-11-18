@@ -4,7 +4,7 @@
 
 Este projeto é um sistema de gerenciamento de clientes desenvolvido com Spring Boot. Ele oferece uma API RESTful para realizar operações de CRUD (Criar, Ler, Atualizar e Excluir) em clientes, incluindo validações e tratamento de erros.
 
-O sistema é ideal para quem deseja aprender ou implementar um backend eficiente utilizando boas práticas de desenvolvimento com Spring Boot.
+O sistema é ideal para quem deseja aprender ou implementar um backend eficiente utilizando boas práticas de desenvolvimento com Spring Boot. 
 
 ## 2. Funcionalidades
 
