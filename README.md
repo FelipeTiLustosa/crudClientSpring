@@ -14,7 +14,7 @@ O sistema é ideal para quem deseja aprender ou implementar um backend eficiente
 | **Buscar Cliente por ID**       | Recupera os dados de um cliente específico pelo ID.                       |
 | **Inserir Cliente**             | Adiciona um novo cliente com validações nos campos.                       |
 | **Atualizar Cliente**           | Atualiza os dados de um cliente existente pelo ID.                        |
-| **Excluir Cliente**             | Remove um cliente do sistema pelo ID.                                    |
+| **Excluir Cliente**             | Remove um cliente do sistema pelo ID.                                    | 
 | **Tratamento de Exceções**      | Garante respostas claras e informativas em caso de erros ou inconsistências.|
 
 ## 3. Tecnologias Utilizadas
